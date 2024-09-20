@@ -1,0 +1,31 @@
+   
+nofz: 
+    nofz_dir:  ../nofz/sompz_batch_20240920/ 
+    nofz_file: sc4_d4
+    reference: False
+    nbin: 9
+    sigma_z_opt: 0.002
+
+survey:
+    neff: 5.1
+    area: 2000
+
+analysis:
+    ell_min: 20
+    ell_max: 1000
+
+priors:
+    sigma_sigma8: 0.20207259
+    sigma_omega_c: 0.28867513
+    sigma_omega_b: 0.00866025
+    sigma_h: 0.09237605
+    sigma_ns: 0.12124355
+    sigma_w0: 1.1547005
+    sigma_wa: 2.8867514
+
+    sigma_A: 5.773503
+    sigma_eta: 5.773503
+
+    sigma_m_opt: 0.002
+
+outfile: sompz_sc4_d4.npz

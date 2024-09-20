@@ -71,8 +71,10 @@ if reference==True:
         NZ.append(nz)
 
 else:
-    sompz = np.load(nofz_dir+nofz_file+'.yaml_som_z.npy')
+    sompz = np.load(nofz_dir+nofz_file+'.yaml_true_z.npy')
+    # sompz = np.load(nofz_dir+nofz_file+'.yaml_som_z.npy')
 
+    
     for i in range(nbin):
         z = sompz[:,0]
         nz = sompz[:,i+1]
@@ -212,4 +214,5 @@ F_noprior = F.copy()
 F_wprior = F + np.diag(d)
 
 cov_estimate = symmetric_positive_definite_inverse(F)
-np.savez(outfile, F_nopriors=F_noprior, F_wprior=F_wprior, cov=cov_estimate)
+np.savez('true/'+outfile, F_nopriors=F_noprior, F_wprior=F_wprior, cov=cov_estimate)
+#np.savez('sompz/'+outfile, F_nopriors=F_noprior, F_wprior=F_wprior, cov=cov_estimate)
