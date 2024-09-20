@@ -1,5 +1,6 @@
 
 # this script takes in a config file and outputs 1) covariance 2) Fisher matrix
+# usage "python roman_cosmic_shear_fisher.py [yml file]"
 
 import os
 import jax
@@ -54,11 +55,10 @@ sigma_eta = config['priors']['sigma_eta']
 
 sigma_m_opt = config['priors']['sigma_m_opt']
 sigma_z_opt = config['nofz']['sigma_z_opt'] # will need to change this to read in multiple values
-
+                 
 outfile = config['outfile']
-                               
-# read in the n(z)
 
+# read in the n(z)
 Z = []
 NZ = []
 
@@ -71,7 +71,7 @@ if reference==True:
         NZ.append(nz)
 
 else:
-    sompz = np.load(nofz_dir+nofz_file)
+    sompz = np.load(nofz_dir+nofz_file+'.yaml_som_z.npy')
 
     for i in range(nbin):
         z = sompz[:,0]

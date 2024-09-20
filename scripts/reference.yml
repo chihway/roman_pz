@@ -28,4 +28,3 @@ priors:
 
     sigma_m_opt: 0.002
 
-outfile: reference.npz
